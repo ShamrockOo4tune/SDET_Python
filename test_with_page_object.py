@@ -27,11 +27,12 @@ def test(webdriver_type, webdriver_path, auth_url, mailbox_login, mailbox_pswd, 
     return 'Pass'  # это для проверки assert Pass == Pass
 
 
-assert test(
-    webdriver_type='Chrome',
-    webdriver_path='./chromedriver.exe',
-    auth_url='https://passport.yandex.ru/auth/welcome?origin=home_desktop_ru&'
-             'retpath=https%3A%2F%2Fmail.yandex.ru%2F&backpath=https%3A%2F%2Fyandex.ru',
-    mailbox_login='test.sele',
-    mailbox_pswd='ytnybr',
-    message_title='Simbirsoft Тестовое задание') == 'Pass'
+if __name__ == "__main__":
+    assert test(
+        webdriver_type='Chrome',
+        webdriver_path='./chromedriver.exe',
+        auth_url='https://passport.yandex.ru/auth/welcome?origin=home_desktop_ru&'
+                 'retpath=https%3A%2F%2Fmail.yandex.ru%2F&backpath=https%3A%2F%2Fyandex.ru',
+        mailbox_login='test.sele',
+        mailbox_pswd='ytnybr',
+        message_title='Simbirsoft Тестовое задание') == 'Pass'
